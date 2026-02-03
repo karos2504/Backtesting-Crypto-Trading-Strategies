@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Darwin-clang++"
+	BuildStamp="20260203-0648-Experimental"
+	Name="Kaross-MacBook-Pro.local"
+	Generator="ctest-4.2.3"
+	CompilerName="/usr/bin/clang++"
+	CompilerVersion="17.0.0.17000603"
+	OSName="macOS"
+	Hostname="192.168.101.130"
+	OSRelease="26.3"
+	OSVersion="25D5112c"
+	OSPlatform="arm64"
+	Is64Bits="1"
+	VendorString="Apple"
+	VendorID="Apple"
+	FamilyID="0"
+	ModelID="0"
+	ModelName="Apple M3 Pro"
+	ProcessorCacheSize="131072"
+	NumberOfLogicalCPU="11"
+	NumberOfPhysicalCPU="11"
+	TotalVirtualMemory="3072"
+	TotalPhysicalMemory="36864"
+	LogicalProcessorsPerPhysical="11"
+	ProcessorClockFrequency="0"
+	>
+	<Testing>
+		<StartDateTime>Feb 04 00:18 +07</StartDateTime>
+		<StartTestTime>1770139106</StartTestTime>
+		<TestList/>
+		<EndDateTime>Feb 04 00:18 +07</EndDateTime>
+		<EndTestTime>1770139106</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

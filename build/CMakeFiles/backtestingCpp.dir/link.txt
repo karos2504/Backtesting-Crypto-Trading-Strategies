@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/backtestingCpp.dir/main.cpp.o CMakeFiles/backtestingCpp.dir/Database.cpp.o -o backtestingCpp  -Wl,-rpath,/opt/homebrew/lib /opt/homebrew/lib/libhdf5.320.0.0.dylib
