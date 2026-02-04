@@ -35,7 +35,7 @@ def backtest(df: pd.DataFrame, min_points: int, min_diff_points: int,
     last_hl = {'supports': [], 'resistances': []}
     
     for i in range(len(highs)):
-        ts = times[i]
+        timestamp = times[i]
         
         for side in ['resistances', 'supports']:
             is_res = (side == 'resistances')
@@ -51,18 +51,18 @@ def backtest(df: pd.DataFrame, min_points: int, min_diff_points: int,
                 grp = price_groups[side][rounded]
                 
                 if grp['start_time'] is None and breaks < 3:
-                    grp['start_time'] = ts
+                    grp['start_time'] = timestamp
                 
-                if breaks < 3 and (grp['last'] is None or ts >= grp['last'] + min_diff_points * candle_length):
+                if breaks < 3 and (grp['last'] is None or timestamp >= grp['last'] + min_diff_points * candle_length):
                     grp['prices'].append(price)
-                    grp['last'] = ts
+                    grp['last'] = timestamp
                     
                     if len(grp['prices']) >= min_points:
                         extreme = max(grp['prices']) if is_res else min(grp['prices'])
                         levels[side].append({'price': extreme, 'broken': False})
             else:
                 if breaks < 3:
-                    price_groups[side][rounded] = {'prices': [price], 'start_time': ts, 'last': ts}
+                    price_groups[side][rounded] = {'prices': [price], 'start_time': timestamp, 'last': timestamp}
             
             # Invalidate broken groups
             for grp in price_groups[side].values():

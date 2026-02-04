@@ -1,0 +1,30 @@
+# Build artifacts
+build/
+C++/build/
+*.o
+*.a
+*.so
+*.dylib
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+*.egg
+
+# IDE
+.vscode/
+.cache/
+.idea/
+*.swp
+*.swo
+
+# HDF5 lock files
+*.h5.lock

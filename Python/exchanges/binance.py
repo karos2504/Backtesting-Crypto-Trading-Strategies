@@ -1,69 +1,35 @@
-import requests
-import logging
+"""Binance exchange client."""
+from typing import Optional
+from .base import BaseExchange
 
-logger = logging.getLogger()
 
-class BinanceClient:
-    def __init__(self, futures=False):
-        
-        self.futures = futures
-
-        if self.futures:
-            self._base_url = 'https://fapi.binance.com'
-        else:    
-            self._base_url = 'https://api.binance.com'
-
-        self.symbols = self._get_symbols()
-
-    def _make_request(self, endpoint: str, query_parameters: dict):
-
-        try:
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-            }
-            response = requests.get(self._base_url + endpoint, params=query_parameters, headers=headers)
-        except Exception as e:
-            logger.error(f'Connection error while making request to {endpoint}: {e}')
-            return None
-        
-        if response.status_code == 200:
-            return response.json()
-        else:
-            logger.error(f'Error while making request to {endpoint}: {response.json()} (status code = {response.status_code})')
-            return None
-
-    def _get_symbols(self) -> list[str]:
-        
-        params = dict()
-
-        endpoint = '/fapi/v1/exchangeInfo' if self.futures else '/api/v3/exchangeInfo'
-        data = self._make_request(endpoint, params)
-
-        symbols = [x['symbol'] for x in data['symbols']]
-
-        return symbols
+class BinanceClient(BaseExchange):
+    """Binance API client."""
     
-    def get_historical_data(self, symbol: str, start_time: int | None = None, end_time: int | None = None):
-
-        params = dict()
-
-        params['symbol'] = symbol
-        params['interval'] = '1m'
-        params['limit'] = 1500
-
-        if start_time is not None:
+    def __init__(self, futures: bool = False):
+        base_url = 'https://fapi.binance.com' if futures else 'https://api.binance.com'
+        super().__init__(base_url, futures)
+    
+    def _get_symbols(self) -> list[str]:
+        endpoint = '/fapi/v1/exchangeInfo' if self.futures else '/api/v3/exchangeInfo'
+        data = self._make_request(endpoint, {})
+        if data:
+            return [x['symbol'] for x in data['symbols']]
+        return []
+    
+    def get_historical_data(self, symbol: str,
+                            start_time: Optional[int] = None,
+                            end_time: Optional[int] = None) -> Optional[list]:
+        params = {'symbol': symbol, 'interval': '1m', 'limit': 1500}
+        if start_time:
             params['startTime'] = start_time
-        if end_time is not None:
+        if end_time:
             params['endTime'] = end_time
-
+        
         endpoint = '/fapi/v1/klines' if self.futures else '/api/v3/klines'
-        raw_candles = self._make_request(endpoint, params)
-
-        candles = []
-
-        if raw_candles is not None:
-            for c in raw_candles:
-                candles.append((float(c[0]), float(c[1]), float(c[2]), float(c[3]), float(c[4]), float(c[5]),))
-            return candles
-        else:
-            return None
+        raw = self._make_request(endpoint, params)
+        
+        if raw:
+            return [(float(c[0]), float(c[1]), float(c[2]), 
+                     float(c[3]), float(c[4]), float(c[5])) for c in raw]
+        return None

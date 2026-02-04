@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/build",
+  "command": "/usr/bin/c++ -DH5_BUILT_AS_DYNAMIC_LIB -I\"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/include\" -I\"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/.\" -isystem /opt/homebrew/include -std=gnu++17 -arch arm64 -o CMakeFiles/backtestingCpp.dir/src/main.cpp.o -c \"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/src/main.cpp\"",
+  "file": "/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/src/main.cpp",
+  "output": "CMakeFiles/backtestingCpp.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/build",
+  "command": "/usr/bin/c++ -DH5_BUILT_AS_DYNAMIC_LIB -I\"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/include\" -I\"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/.\" -isystem /opt/homebrew/include -std=gnu++17 -arch arm64 -o CMakeFiles/backtestingCpp.dir/src/Database.cpp.o -c \"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/src/Database.cpp\"",
+  "file": "/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/src/Database.cpp",
+  "output": "CMakeFiles/backtestingCpp.dir/src/Database.cpp.o"
+},
+{
+  "directory": "/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/build",
+  "command": "/usr/bin/c++ -DH5_BUILT_AS_DYNAMIC_LIB -I\"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/include\" -I\"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/.\" -isystem /opt/homebrew/include -std=gnu++17 -arch arm64 -o CMakeFiles/backtestingCpp.dir/src/Utils.cpp.o -c \"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/src/Utils.cpp\"",
+  "file": "/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/src/Utils.cpp",
+  "output": "CMakeFiles/backtestingCpp.dir/src/Utils.cpp.o"
+},
+{
+  "directory": "/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/build",
+  "command": "/usr/bin/c++ -DH5_BUILT_AS_DYNAMIC_LIB -I\"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/include\" -I\"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/.\" -isystem /opt/homebrew/include -std=gnu++17 -arch arm64 -o CMakeFiles/backtestingCpp.dir/src/strategies/SMA.cpp.o -c \"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/src/strategies/SMA.cpp\"",
+  "file": "/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/src/strategies/SMA.cpp",
+  "output": "CMakeFiles/backtestingCpp.dir/src/strategies/SMA.cpp.o"
+},
+{
+  "directory": "/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/build",
+  "command": "/usr/bin/c++ -DH5_BUILT_AS_DYNAMIC_LIB -I\"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/include\" -I\"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/.\" -isystem /opt/homebrew/include -std=gnu++17 -arch arm64 -o CMakeFiles/backtestingCpp.dir/src/strategies/PSAR.cpp.o -c \"/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/src/strategies/PSAR.cpp\"",
+  "file": "/Users/karos/Documents/Backtesting Crypto Trading Strategies/cpp/src/strategies/PSAR.cpp",
+  "output": "CMakeFiles/backtestingCpp.dir/src/strategies/PSAR.cpp.o"
+}
+]
