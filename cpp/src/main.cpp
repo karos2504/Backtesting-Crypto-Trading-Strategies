@@ -1,5 +1,5 @@
-#include "strategies/PSAR.h"
-#include "strategies/SMA.h"
+#include "include/strategies/PSAR.h"
+#include "include/strategies/SMA.h"
 #include <cstdio>
 
 int main() {

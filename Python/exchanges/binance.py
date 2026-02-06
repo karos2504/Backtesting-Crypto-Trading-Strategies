@@ -2,7 +2,6 @@
 from typing import Optional
 from .base import BaseExchange
 
-
 class BinanceClient(BaseExchange):
     """Binance API client."""
     

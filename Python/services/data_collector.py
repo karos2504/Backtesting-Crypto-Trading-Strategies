@@ -4,7 +4,7 @@ import time
 
 from exchanges.binance import BinanceClient
 from exchanges.okx import OkxClient
-from utils import ms_to_datetime
+from common.utils import ms_to_datetime
 from services.database import Hdf5Client
 
 logger = logging.getLogger()
@@ -45,9 +45,7 @@ def collect_all(client: Union[BinanceClient, OkxClient], exchange: str, symbol: 
         recent_candle_time = recent_db
 
     logger.info(f'Current range: {ms_to_datetime(oldest_candle_time)} to {ms_to_datetime(recent_candle_time)}.')
-
-    # We use a deque or list to store candles for the "History" phase to ensure sorted order on write.
-    # Order: [Oldest ... Initial ... Recent]
+    
     all_history_candles = list(initial_candles)
 
     try:

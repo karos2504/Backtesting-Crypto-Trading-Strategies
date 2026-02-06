@@ -10,48 +10,34 @@ A backtesting framework for cryptocurrency trading strategies in both C++ and Py
 │   └── binance.h5          # HDF5 candle data
 ├── logs/                    # Shared log files
 │   └── app.log
-├── C++/                     # C++ implementation
-│   ├── strategies/
-│   │   ├── Strategy.h      # Base strategy class
-│   │   ├── PSAR.h/.cpp     # Parabolic SAR strategy
-│   │   └── SMA.h/.cpp      # Moving Average strategy
-│   ├── Candle.h            # OHLCV data structure
-│   ├── Database.h/.cpp     # HDF5 database client
-│   ├── Utils.h/.cpp        # Candle resampling utilities
-│   ├── main.cpp            # Entry point
+├── cpp/                     # C++ implementation
+│   ├── src/                 # Source files
+│   ├── include/             # Header files
 │   └── CMakeLists.txt      # Build configuration
-├── Python/                  # Python implementation
-│   ├── strategies/
-│   │   ├── psar.py         # Parabolic SAR strategy
-│   │   ├── sma.py          # Moving Average strategy
-│   │   ├── obv.py          # On-Balance Volume strategy
-│   │   ├── ichimoku.py     # Ichimoku Cloud strategy
-│   │   └── support_resistance.py
-│   ├── exchanges/
-│   │   ├── base.py         # Base exchange class
-│   │   ├── binance.py      # Binance API client
-│   │   └── okx.py          # OKX API client
-│   ├── services/
-│   │   ├── database.py     # HDF5 database client
-│   │   └── data_collector.py
-│   ├── main.py             # Entry point
-│   ├── backtesting.py      # Backtest runner
-│   └── utils.py            # Utilities
-├── build/                   # C++ build output (gitignored)
-└── .gitignore
+├── python/                  # Python implementation
+│   ├── core/                # Core logic (optimizer, backtester)
+│   ├── common/              # Utilities (logger, config)
+│   ├── models/              # Data models
+│   ├── strategies/          # Trading strategies
+│   ├── services/            # Data services
+│   ├── exchanges/           # Exchange clients
+│   └── main.py             # Entry point
+├── .gitignore
+└── requirements.txt
 ```
 
 ## Quick Start
 
 ### C++
 ```bash
-cd build && cmake ../C++ && make
-cd ../C++ && ../build/backtestingCpp
+cd cpp && mkdir build && cd build
+cmake .. && make
+./backtestingCpp
 ```
 
 ### Python
 ```bash
-python3 Python/main.py
+python3 python/main.py
 ```
 
 ## Strategies

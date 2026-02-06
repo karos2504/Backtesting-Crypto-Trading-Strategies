@@ -12,3 +12,6 @@
 2026-02-04 23:19:31,717 DEBUG :: https://fapi.binance.com:443 "GET /fapi/v1/exchangeInfo HTTP/1.1" 200 None
 2026-02-04 23:19:40,578 INFO :: Retrieved 28530 candles for BTCUSDT from 0 to 1770221980295 in 0.02 seconds.
 2026-02-04 23:19:41,658 INFO :: PnL: -0.03% | Max Drawdown: 0.00%
+2026-02-05 23:04:10,058 DEBUG :: Starting new HTTPS connection (1): fapi.binance.com:443
+2026-02-05 23:04:10,540 DEBUG :: https://fapi.binance.com:443 "GET /fapi/v1/exchangeInfo HTTP/1.1" 200 None
+2026-02-05 23:04:51,597 INFO :: Retrieved 28530 candles for BTCUSDT from 0 to 1770307463052 in 0.03 seconds.

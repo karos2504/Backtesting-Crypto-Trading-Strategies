@@ -1,6 +1,6 @@
 # Build artifacts
 build/
-C++/build/
+cpp/build/
 *.o
 *.a
 *.so
@@ -28,3 +28,6 @@ __pycache__/
 
 # HDF5 lock files
 *.h5.lock
+
+# Compilation database
+compile_commands.json

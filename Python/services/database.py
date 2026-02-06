@@ -4,6 +4,8 @@ import h5py
 import numpy as np
 import pandas as pd
 import time
+import os
+from common.config import DATA_DIR
 
 logger = logging.getLogger()
 
@@ -11,7 +13,7 @@ class Hdf5Client:
 
     def __init__(self, exchange: str):
         self.exchange = exchange
-        self.file = h5py.File(f'data/{exchange}.h5', 'a')
+        self.file = h5py.File(os.path.join(DATA_DIR, f'{exchange}.h5'), 'a')
         self.file.flush()
 
     def create_dataset(self, symbol: str):

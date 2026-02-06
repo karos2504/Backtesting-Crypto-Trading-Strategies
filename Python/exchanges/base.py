@@ -6,7 +6,6 @@ from typing import Optional
 
 logger = logging.getLogger()
 
-
 class BaseExchange(ABC):
     """Abstract base class for exchange clients."""
     
